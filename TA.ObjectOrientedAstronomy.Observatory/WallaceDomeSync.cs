@@ -19,7 +19,7 @@ namespace TA.ObjectOrientedAstronomy.Observatory
             this.geometry = geometry;
             }
 
-public DomePosition FromTelescopeMechanicalPosition(HourAngleQuantity mechanicalHourAngle, Declination mechanicalDeclination)
+public DomePosition FromTelescopeMechanicalPosition(HourAngle mechanicalHourAngle, Declination mechanicalDeclination)
             {
             // Unpack the various inputs so that we have names matching the equations in [Wallace].
             var h = mechanicalHourAngle.InRadians();

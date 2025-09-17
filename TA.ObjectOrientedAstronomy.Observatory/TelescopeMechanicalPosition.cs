@@ -6,7 +6,7 @@ namespace TA.ObjectOrientedAstronomy.Observatory
     {
     public class TelescopeMechanicalPosition : IComparable<TelescopeMechanicalPosition>, IComparable
         {
-public HourAngleQuantity HourAngle { get; }
+public HourAngle HourAngle { get; }
         public Declination Declination { get; }
         public TelescopeMechanicalPosition(double hourAngle, double declination)
             {
@@ -14,7 +14,7 @@ public HourAngleQuantity HourAngle { get; }
                 throw new ArgumentOutOfRangeException(nameof(hourAngle), hourAngle, $"Hour angle outside valid range 0 ≤ x < 24.0" );
             if (declination < -90 || declination > 90)
                 throw new ArgumentOutOfRangeException(nameof(declination), declination, $"Declination outside valid range -90 ≤ x ≤ 90" );
-            HourAngle = HourAngleQuantity.FromHours(hourAngle);
+            HourAngle = HourAngle.FromHours(hourAngle);
             Declination = Declination.FromDegrees(declination);
             }
 

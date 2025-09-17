@@ -11,12 +11,12 @@ internal class when_converting_hour_angle_to_degrees_and_radians
 {
     private It twelve_hours_should_be_180_degrees = () =>
     {
-        var deg = new Quantity<HourAngle>(12.0).As<Degree>();
+        var deg = new Quantity<HourOfAngle>(12.0).As<Degree>();
         Math.Abs(deg - 180.0).ShouldBeLessThan(1e-12);
     };
 
     private It twelve_hours_should_be_pi_radians = () =>
-        Math.Abs(new Quantity<HourAngle>(12.0).ValueSI - Math.PI).ShouldBeLessThan(1e-12);
+        Math.Abs(new Quantity<HourOfAngle>(12.0).ValueSI - Math.PI).ShouldBeLessThan(1e-12);
 }
 
 [Subject("Right Ascension normalization")]
@@ -35,18 +35,18 @@ internal class when_normalizing_right_ascension
     };
 }
 
-[Subject("HourAngleQuantity normalization")]
+[Subject("HourAngle normalization")]
 internal class when_checking_hour_angle_signed_and_unsigned
 {
     private It signed_is_in_minus12_plus12 = () =>
     {
-        var hs = HourAngleQuantity.FromHours(13.0).AsSignedHours();
+        var hs = HourAngle.FromHours(13.0).AsSignedHours();
         Math.Abs(hs - -11.0).ShouldBeLessThan(1e-12);
     };
 
     private It unsigned_is_in_0_24 = () =>
     {
-        var h = HourAngleQuantity.FromDegrees(390.0).AsHoursUnwrapped(); // 390° = 26h -> 2h
+        var h = HourAngle.FromDegrees(390.0).AsHoursUnwrapped(); // 390° = 26h -> 2h
         Math.Abs(h - 2.0).ShouldBeLessThan(1e-12);
     };
 }

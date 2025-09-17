@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Shared", "Solution
 		.gitignore = .gitignore
 		Directory.Packages.props = Directory.Packages.props
 		GitVersion.yaml = GitVersion.yaml
+		global.json = global.json
 		Timtek.SemanticQuantities.sln.DotSettings = Timtek.SemanticQuantities.sln.DotSettings
 		WARP.md = WARP.md
 	EndProjectSection

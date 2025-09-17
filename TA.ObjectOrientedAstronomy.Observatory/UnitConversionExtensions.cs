@@ -11,12 +11,12 @@ namespace TA.ObjectOrientedAstronomy.Observatory
 
         public static double RadiansToDegrees(double radians) => radians * 180.0 / Math.PI;
 
-public static double InDegrees(this HourAngleQuantity ha)
+public static double InDegrees(this HourAngle ha)
             {
             return ha.AsDegrees();
             }
 
-        public static double InRadians(this HourAngleQuantity ha)
+        public static double InRadians(this HourAngle ha)
             {
             return ha.AsRadians();
             }

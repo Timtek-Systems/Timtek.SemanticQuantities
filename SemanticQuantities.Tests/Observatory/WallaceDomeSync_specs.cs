@@ -29,7 +29,7 @@ Geo = new ObservatoryGeometry(
 
     It returns_zenith_for_HA0_Dec0 = () =>
     {
-        var dome = Sync.FromTelescopeMechanicalPosition(HourAngleQuantity.FromHours(0.0), Declination.FromDegrees(0.0));
+        var dome = Sync.FromTelescopeMechanicalPosition(HourAngle.FromHours(0.0), Declination.FromDegrees(0.0));
         var az = dome.Azimuth.As<Degree>();
         var el = dome.Elevation.As<Degree>();
         Math.Abs(az - 0.0).ShouldBeLessThan(1e-12);

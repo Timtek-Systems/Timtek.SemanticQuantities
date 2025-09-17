@@ -36,7 +36,7 @@ public readonly struct RightAscension
     ///     Creates a RightAscension from hours-of-time.
     /// </summary>
     /// <param name="hours">Right ascension in hours (will be wrapped to [0, 24)).</param>
-    public static RightAscension FromHours(double hours) => new(new HourAngle().ToSI(hours));
+    public static RightAscension FromHours(double hours) => new(new HourOfAngle().ToSI(hours));
 
     /// <summary>
     ///     Creates a RightAscension from degrees.
@@ -63,7 +63,7 @@ public readonly struct RightAscension
     /// <summary>
     ///     Gets the right ascension value in hours-of-time.
     /// </summary>
-    public double AsHours() => new HourAngle().FromSI(_rad);
+    public double AsHours() => new HourOfAngle().FromSI(_rad);
 }
 
 /// <summary>
@@ -72,29 +72,29 @@ public readonly struct RightAscension
 /// <remarks>
 ///     Provides both unsigned ([0, 24h)) and signed ([-12h, +12h)) hour-angle views.
 /// </remarks>
-public readonly struct HourAngleQuantity
+public readonly struct HourAngle
 {
     private readonly double _rad; // SI radians, wrapped to [0, 2π)
 
-    private HourAngleQuantity(double radians) => _rad = AngleNorm.Wrap(radians, 0.0, 2.0 * Math.PI);
+    private HourAngle(double radians) => _rad = AngleNorm.Wrap(radians, 0.0, 2.0 * Math.PI);
 
     /// <summary>
     ///     Creates an hour-angle quantity from hours-of-time.
     /// </summary>
     /// <param name="hours">Hour angle in hours (wrapped to [0, 24)).</param>
-    public static HourAngleQuantity FromHours(double hours) => new(new HourAngle().ToSI(hours));
+    public static HourAngle FromHours(double hours) => new(new HourOfAngle().ToSI(hours));
 
     /// <summary>
     ///     Creates an hour-angle quantity from degrees.
     /// </summary>
     /// <param name="degrees">Hour angle in degrees (wrapped to [0°, 360°)).</param>
-    public static HourAngleQuantity FromDegrees(double degrees) => new(new Degree().ToSI(degrees));
+    public static HourAngle FromDegrees(double degrees) => new(new Degree().ToSI(degrees));
 
     /// <summary>
     ///     Creates an hour-angle quantity from radians.
     /// </summary>
     /// <param name="radians">Hour angle in radians (wrapped to [0, 2π)).</param>
-    public static HourAngleQuantity FromRadians(double radians) => new(radians);
+    public static HourAngle FromRadians(double radians) => new(radians);
 
     /// <summary>
     ///     Returns the hour angle in radians.
@@ -109,7 +109,7 @@ public readonly struct HourAngleQuantity
     /// <summary>
     ///     Returns the hour angle in hours, normalized to [0, 24).
     /// </summary>
-    public double AsHoursUnwrapped() => new HourAngle().FromSI(_rad); // in [0, 24)
+    public double AsHoursUnwrapped() => new HourOfAngle().FromSI(_rad); // in [0, 24)
 
     /// <summary>
     ///     Returns the hour angle in signed hours, normalized to [-12, +12).
