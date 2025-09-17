@@ -1,4 +1,6 @@
 
+namespace Timtek.SemanticQuantities.Units;
+
 public class Kilometer : IUnit
 {
     public double ToSI(double value) => value * 1000.0;

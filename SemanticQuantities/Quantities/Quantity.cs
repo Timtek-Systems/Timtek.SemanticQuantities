@@ -1,5 +1,6 @@
+using Timtek.SemanticQuantities.Units;
 
-using System;
+namespace Timtek.SemanticQuantities.Quantities;
 
 public readonly struct Quantity<TUnit> where TUnit : IUnit, new()
 {

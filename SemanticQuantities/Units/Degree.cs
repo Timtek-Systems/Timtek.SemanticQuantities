@@ -1,5 +1,5 @@
 
-using System;
+namespace Timtek.SemanticQuantities.Units;
 
 public class Degree : IUnit
 {

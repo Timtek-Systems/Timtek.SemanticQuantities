@@ -1,3 +1,5 @@
+namespace Timtek.SemanticQuantities.Time;
+
 public sealed class UTC : ITimeScale
 {
     public string Name => "UTC";
@@ -6,7 +8,7 @@ public sealed class UTC : ITimeScale
 
     public double ToTaiSeconds(double secondsSinceEpochInThisScale, ITimeScaleContext ctx)
     {
-        var utc = EpochUtc.AddSeconds(secondsSinceEpochInThisScale);
+        var utc    = EpochUtc.AddSeconds(secondsSinceEpochInThisScale);
         var offset = ctx.LeapSeconds.TaiMinusUtcSeconds(utc);
         return secondsSinceEpochInThisScale + offset;
     }
@@ -19,7 +21,7 @@ public sealed class UTC : ITimeScale
         {
             var utc = EpochUtc.AddSeconds(guessUtc);
             var off = ctx.LeapSeconds.TaiMinusUtcSeconds(utc);
-            var f = guessUtc + off - taiSecondsSinceEpoch;
+            var f   = guessUtc + off - taiSecondsSinceEpoch;
             guessUtc -= f; // df/dx ≈ 1
         }
         return guessUtc;

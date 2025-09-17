@@ -1,6 +1,8 @@
+namespace Timtek.SemanticQuantities.Time;
+
 public interface ITimeScale
 {
     string Name { get; }
-    double ToTaiSeconds(double secondsSinceEpochInThisScale, ITimeScaleContext ctx);
-    double FromTaiSeconds(double taiSecondsSinceEpoch, ITimeScaleContext ctx);
+    double ToTaiSeconds(double   secondsSinceEpochInThisScale, ITimeScaleContext ctx);
+    double FromTaiSeconds(double taiSecondsSinceEpoch,         ITimeScaleContext ctx);
 }

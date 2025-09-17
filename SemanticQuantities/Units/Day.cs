@@ -1,3 +1,5 @@
+namespace Timtek.SemanticQuantities.Units;
+
 public class Day : IUnit
 {
     public double ToSI(double value) => value * 86400.0;

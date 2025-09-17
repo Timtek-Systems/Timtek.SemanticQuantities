@@ -1,6 +1,7 @@
-
-using System;
 using Machine.Specifications;
+using Timtek.SemanticQuantities.Quantities.Domain;
+
+namespace Timtek.SemanticQuantities.Tests;
 
 [Subject("Speed conversion")]
 public class when_converting_kmh_to_mps

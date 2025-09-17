@@ -1,6 +1,11 @@
+using Timtek.SemanticQuantities.Quantities;
+using Timtek.SemanticQuantities.Units;
+
+namespace Timtek.SemanticQuantities.Time;
+
 public readonly struct TimeInstant<TScale> where TScale : ITimeScale, new()
 {
-    private readonly double _taiSecondsSinceEpoch;
+    private readonly        double _taiSecondsSinceEpoch;
     private static readonly TScale Scale = new();
 
     public TimeInstant(double taiSecondsSinceEpoch)

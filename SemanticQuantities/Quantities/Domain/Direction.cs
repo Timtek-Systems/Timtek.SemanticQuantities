@@ -1,4 +1,4 @@
-using System;
+namespace Timtek.SemanticQuantities.Quantities.Domain;
 
 public readonly struct Direction
 {

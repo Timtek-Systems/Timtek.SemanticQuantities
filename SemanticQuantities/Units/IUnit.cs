@@ -1,4 +1,6 @@
 
+namespace Timtek.SemanticQuantities.Units;
+
 public interface IUnit
 {
     double ToSI(double value);

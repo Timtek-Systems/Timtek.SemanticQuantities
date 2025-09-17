@@ -10,6 +10,8 @@
     <PackageReference Include="Machine.Specifications" />
     <PackageReference Include="Machine.Fakes.FakeItEasy" />
     <PackageReference Include="Machine.Specifications.Runner.Console" PrivateAssets="all" />
+    <PackageReference Include="Machine.Specifications.Runner.VisualStudio" />
+    <PackageReference Include="Machine.Specifications.Should" />
   </ItemGroup>
 
   <ItemGroup>

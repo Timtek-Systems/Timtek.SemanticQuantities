@@ -1,6 +1,8 @@
-
-using System;
 using Machine.Specifications;
+using Timtek.SemanticQuantities.Quantities.Domain;
+using Timtek.SemanticQuantities.Units;
+
+namespace Timtek.SemanticQuantities.Tests;
 
 [Subject("Angle conversion")]
 public class when_converting_degrees_to_radians

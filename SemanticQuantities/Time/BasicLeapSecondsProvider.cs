@@ -1,4 +1,4 @@
-using System;
+namespace Timtek.SemanticQuantities.Time;
 
 public class BasicLeapSecondsProvider : ILeapSecondsProvider
 {

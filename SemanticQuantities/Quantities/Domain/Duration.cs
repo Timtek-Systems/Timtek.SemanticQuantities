@@ -1,3 +1,7 @@
+using Timtek.SemanticQuantities.Units;
+
+namespace Timtek.SemanticQuantities.Quantities.Domain;
+
 public static class Duration
 {
     public static Quantity<Second> FromSeconds(double    seconds) => new(seconds, true);

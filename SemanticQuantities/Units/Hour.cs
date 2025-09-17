@@ -1,3 +1,5 @@
+namespace Timtek.SemanticQuantities.Units;
+
 public class Hour : IUnit
 {
     public double ToSI(double value) => value * 3600.0;
