@@ -86,7 +86,10 @@ public readonly struct Quantity
         if (!a.Signature.Equals(b.Signature))
             throw new InvalidOperationException($"Cannot {(sign > 0 ? "add" : "subtract")} quantities of different dimensions: {a.Signature} and {b.Signature}");
         var registry = DimensionSystem.Registry;
-        var coherent = registry.GetCoherentUnit(a.Signature);
+        var sysA = registry.GetUnitSystem(a.Unit);
+        var sysB = registry.GetUnitSystem(b.Unit);
+        var preferredSystem = sysA == sysB ? sysA : Registry.UnitSystem.SI; // default SI for mixed systems
+        var coherent = registry.GetCoherentUnit(a.Signature, preferredSystem);
         var resultSi = a.ValueSI + sign * b.ValueSI;
         var valueInCoherent = coherent.FromSI(resultSi);
         return new Quantity(valueInCoherent, coherent);
@@ -96,7 +99,10 @@ public readonly struct Quantity
     {
         var signature = isMultiply ? a.Signature + b.Signature : a.Signature - b.Signature;
         var registry  = DimensionSystem.Registry;
-        var coherent  = registry.GetCoherentUnit(signature);
+        var sysA = registry.GetUnitSystem(a.Unit);
+        var sysB = registry.GetUnitSystem(b.Unit);
+        var preferredSystem = sysA == sysB ? sysA : Registry.UnitSystem.SI; // default SI for mixed systems
+        var coherent  = registry.GetCoherentUnit(signature, preferredSystem);
         var resultSi  = isMultiply ? a.ValueSI * b.ValueSI : a.ValueSI / b.ValueSI;
         var valueInCoherent = coherent.FromSI(resultSi);
         return new Quantity(valueInCoherent, coherent);

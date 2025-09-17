@@ -30,7 +30,7 @@ public class when_converting_between_lbf_psi_and_SI
     {
         var f = new Quantity(1.0, new PoundForce());
         var inch = new Quantity(1.0, new Inch());
-        var area = new Quantity(1.0, new CompoundUnit("in^2", new Timtek.SemanticQuantities.Dimensions.DimensionSignature(2,0,0,0,0,0,0,0)));
+        var area = inch * inch; // 1 in^2 with imperial system inferred
         var p = f / area; // 1 lbf / in^2 = 1 psi
         p.Unit.Symbol.ShouldEqual("psi");
         p.As(new Psi()).ShouldBeCloseTo(1.0, 1e-12);

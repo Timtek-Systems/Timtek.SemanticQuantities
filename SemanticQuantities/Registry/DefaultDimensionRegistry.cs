@@ -11,19 +11,31 @@ public sealed class DefaultDimensionRegistry : IDimensionRegistry
 {
     private readonly Dictionary<string, IUnit> _bySymbol = new(StringComparer.Ordinal);
     private readonly Dictionary<string, IUnit> _byName   = new(StringComparer.OrdinalIgnoreCase);
-    private readonly Dictionary<DimensionSignature, IUnit> _coherentBySignature = new();
+    private readonly Dictionary<UnitSystem, Dictionary<DimensionSignature, IUnit>> _coherentBySystem = new()
+    {
+        [UnitSystem.SI] = new(),
+        [UnitSystem.Imperial] = new(),
+    };
+    private readonly Dictionary<Type, UnitSystem> _unitSystemByType = new();
 
-    public void Register(IUnit unit)
+    public void Register(IUnit unit) => Register(unit, UnitSystem.SI);
+
+    public void Register(IUnit unit, UnitSystem system)
     {
         _bySymbol[unit.Symbol] = unit;
         _byName[unit.Name]     = unit;
+        _unitSystemByType[unit.GetType()] = system;
 
-        // If the unit is coherent SI (a=1, b=0 implied by unit conversion identity),
-        // register as preferred for its signature if not yet set or choose SI named unit over compound.
-        // For now, assume any unit whose ToSI/FromSI are identity at runtime for coherent SI (coarse heuristic).
-        // We allow multiple registers; first wins unless later is an SI named unit replacing a compound.
-        if (!_coherentBySignature.ContainsKey(unit.Signature) || _coherentBySignature[unit.Signature] is CompoundUnit)
-            _coherentBySignature[unit.Signature] = unit;
+        var map = _coherentBySystem[system];
+        if (!map.ContainsKey(unit.Signature) || map[unit.Signature] is CompoundUnit)
+            map[unit.Signature] = unit;
+    }
+
+    public UnitSystem GetUnitSystem(IUnit unit)
+    {
+        if (unit is CompoundUnit cu) return cu.System;
+        if (_unitSystemByType.TryGetValue(unit.GetType(), out var sys)) return sys;
+        return UnitSystem.SI;
     }
 
     public IUnit ParseUnit(string text)
@@ -37,13 +49,18 @@ public sealed class DefaultDimensionRegistry : IDimensionRegistry
     public bool IsKnownUnit(string text)
         => _bySymbol.ContainsKey(text) || _byName.ContainsKey(text);
 
-    public IUnit GetCoherentUnit(DimensionSignature signature)
+    public IUnit GetCoherentUnit(DimensionSignature signature, UnitSystem preferredSystem = UnitSystem.SI)
     {
-        if (_coherentBySignature.TryGetValue(signature, out var unit)) return unit;
+        var mapPreferred = _coherentBySystem[preferredSystem];
+        if (mapPreferred.TryGetValue(signature, out var preferred)) return preferred;
+
+        var mapSI = _coherentBySystem[UnitSystem.SI];
+        if (mapSI.TryGetValue(signature, out var siUnit)) return siUnit;
+
         // Build a canonical compound symbol from the signature in SI base order: m, kg, s, A, K, mol, cd, rad
         var symbol = BuildCanonicalSymbol(signature);
-        var compound = new CompoundUnit(symbol, signature);
-        _coherentBySignature[signature] = compound;
+        var compound = new CompoundUnit(symbol, signature, preferredSystem);
+        mapPreferred[signature] = compound;
         return compound;
     }
 
