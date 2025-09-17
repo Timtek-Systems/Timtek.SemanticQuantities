@@ -48,12 +48,12 @@ public static class RegistryBootstrapper
         r.Register(new JulianDay());
 
         // Imperial/customary convenience units (length, mass)
-        r.Register(new Foot());
-        r.Register(new Inch());
-        r.Register(new Pound());
-        r.Register(new Ounce());
-        r.Register(new PoundForce());
-        r.Register(new Psi());
+        r.Register(new Foot(), UnitSystem.Imperial);
+        r.Register(new Inch(), UnitSystem.Imperial);
+        r.Register(new Pound(), UnitSystem.Imperial);
+        r.Register(new Ounce(), UnitSystem.Imperial);
+        r.Register(new PoundForce(), UnitSystem.Imperial);
+        r.Register(new Psi(), UnitSystem.Imperial);
 
         return r;
     }
