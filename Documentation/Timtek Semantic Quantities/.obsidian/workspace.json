@@ -1,0 +1,162 @@
+{
+  "main": {
+    "id": "f1f738dfedbde7e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "710d77607473f677",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "af36f655bba0a779",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "537626e3892cc460",
+    "type": "split",
+    "children": [
+      {
+        "id": "35b529c206b49436",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "513309c56d094a8d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "cd39ca6e7e09456d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "58e43b4e69deacc4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "15f84452d5c3b5e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "32c56324acf30fee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "00308f3e79f1de79",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "84a4046b1bbc9fd0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f98e8dd93dc8a587",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "af36f655bba0a779",
+  "lastOpenFiles": [
+    "Units.md",
+    "Time-System.md",
+    "Examples.md",
+    "Sky-Angles.md",
+    "Registry.md",
+    "Rationale.md",
+    "Architecture.md",
+    "Dimensions.md",
+    "Domain-Quantities.md",
+    "Migration.md",
+    "Index.md"
+  ]
+}
