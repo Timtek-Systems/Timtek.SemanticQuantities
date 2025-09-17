@@ -12,7 +12,7 @@ public static class DimensionSystem
 
     public static IDimensionRegistry Registry
     {
-        get => _registry ??= Registry.RegistryBootstrapper.BuildDefault();
+        get => _registry ??= RegistryBootstrapper.BuildDefault();
         set => _registry = value ?? throw new ArgumentNullException(nameof(value));
     }
 }
