@@ -16,10 +16,13 @@ Common commands (pwsh on Windows)
 - Build
   - dotnet build Timtek.SemanticQuantities.sln -c Debug
   - Cross-target build (library only): dotnet build .\SemanticQuantities\Timtek.SemanticQuantities.csproj -c Release -f net8.0
-- Format/lint (no repo-specific analyzers configured; use dotnet-format)
-  - dotnet format --verify-no-changes
-  - dotnet format style --severity info
-  - dotnet format analyzers --severity info
+- Format/lint (read-only checks; do not apply changes)
+  - dotnet format style --verify-no-changes
+  - dotnet format analyzers --verify-no-changes
+  - dotnet format whitespace --verify-no-changes (optional: check whitespace drift only)
+  - Notes:
+    - Never run plain "dotnet format" (without --verify-no-changes); it would rewrite files.
+    - We preserve ReSharper column alignment; whitespace fixes should not be applied automatically.
 - Run tests (MSpec console runner against net48 output)
   1) Build tests for .NET Framework (required by MSpec console runner):
      - dotnet build .\SemanticQuantities.Tests\Timtek.SemanticQuantities.Tests.csproj -c Debug -f net48

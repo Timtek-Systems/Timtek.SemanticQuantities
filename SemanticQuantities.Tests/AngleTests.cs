@@ -7,12 +7,12 @@ namespace Timtek.SemanticQuantities.Tests;
 [Subject("Angle conversion")]
 public class when_converting_degrees_to_radians
 {
-    static double result;
+    private static double result;
 
-    Because of = () =>
+    private Because of = () =>
         result = Angle.FromDegrees(180).As<Radian>();
 
-    It should_be_pi = () =>
+    private It should_be_pi = () =>
     {
         if (Math.Abs(result - Math.PI) > 1e-6)
             throw new Exception($"Expected PI within 1e-6, but was {result}");

@@ -1,4 +1,3 @@
-
 using Timtek.SemanticQuantities.Units;
 
 namespace Timtek.SemanticQuantities.Quantities.Domain;

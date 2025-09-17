@@ -8,10 +8,7 @@ public readonly struct TimeInstant<TScale> where TScale : ITimeScale, new()
     private readonly        double _taiSecondsSinceEpoch;
     private static readonly TScale Scale = new();
 
-    public TimeInstant(double taiSecondsSinceEpoch)
-    {
-        _taiSecondsSinceEpoch = taiSecondsSinceEpoch;
-    }
+    public TimeInstant(double taiSecondsSinceEpoch) => _taiSecondsSinceEpoch = taiSecondsSinceEpoch;
 
     public static TimeInstant<TScale> FromSeconds(double secondsSinceEpochInThisScale, ITimeScaleContext ctx)
         => new(Scale.ToTaiSeconds(secondsSinceEpochInThisScale, ctx));
