@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SemanticQuantities\Timtek.SemanticQuantities.csproj" />
+    <ProjectReference Include="..\\SemanticQuantities\\Timtek.SemanticQuantities.csproj" />
+    <ProjectReference Include="..\\TA.ObjectOrientedAstronomy.Observatory\\TA.ObjectOrientedAstronomy.Observatory.csproj" />
   </ItemGroup>
 </Project>
