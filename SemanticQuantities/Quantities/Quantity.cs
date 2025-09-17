@@ -62,6 +62,19 @@ public readonly struct Quantity
 
     public override string ToString() => $"{Unit.FromSI(ValueSI)} {Unit.Symbol}";
 
+    /// <summary>
+    /// Formats the quantity using a preferred coherent unit for the system of the current unit.
+    /// For SI units: uses SI coherent. For Imperial: uses Imperial coherent. Mixed/dimensionless fall back to SI.
+    /// </summary>
+    public string ToStringNormalized()
+    {
+        var registry = DimensionSystem.Registry;
+        var sys = registry.GetUnitSystem(Unit);
+        var coherent = registry.GetCoherentUnit(Signature, sys);
+        var v = coherent.FromSI(ValueSI);
+        return $"{v} {coherent.Symbol}";
+    }
+
     // Arithmetic
     public static Quantity operator +(Quantity a, Quantity b) =>
         AddSub(a, b, +1);
