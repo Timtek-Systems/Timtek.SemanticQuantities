@@ -1,5 +1,3 @@
-using System;
-
 public readonly struct TimeInstant<TScale> where TScale : ITimeScale, new()
 {
     private readonly double _taiSecondsSinceEpoch;
@@ -19,6 +17,6 @@ public readonly struct TimeInstant<TScale> where TScale : ITimeScale, new()
     public TimeInstant<TScale> Add(Quantity<Second> duration)
         => new(_taiSecondsSinceEpoch + duration.ValueSI);
 
-    public Quantity<Second> Subtract(TimeInstant<TScale> other)
-        => new Quantity<Second>(_taiSecondsSinceEpoch - other._taiSecondsSinceEpoch, isSI: true);
+    public Quantity<Second> Subtract(TimeInstant<TScale> other) =>
+        new(_taiSecondsSinceEpoch - other._taiSecondsSinceEpoch, true);
 }

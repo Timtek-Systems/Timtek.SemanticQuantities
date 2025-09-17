@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Company>Timtek Systems</Company>
-    <Product>Timtek.ObjectOrientedAstronomy.Units</Product>
+    <Product>Timtek.SemanticQuantities</Product>
   </PropertyGroup>
 
 </Project>

@@ -1,0 +1,22 @@
+﻿<wpf:ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:s="clr-namespace:System;assembly=mscorlib"
+                        xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <!-- Field naming: camelCase, no underscore -->
+  <s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Field/@EntryIndexedValue">
+    NamingPolicy=aaBb; Prefix=; Suffix=; Style=CamelCase; Min=1; Max=100
+  </s:String>
+
+  <!-- Static readonly field naming: camelCase, no underscore -->
+  <s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=StaticReadonly/@EntryIndexedValue">
+    NamingPolicy=aaBb; Prefix=; Suffix=; Style=CamelCase; Min=1; Max=100
+  </s:String>
+
+  <!-- Constant naming (PascalCase by your rules) -->
+  <s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Constant/@EntryIndexedValue">
+    NamingPolicy=AaBb; Prefix=; Suffix=; Style=PascalCase; Min=1; Max=100
+  </s:String>
+  
+  <!-- Structured Logging -->
+  <s:String x:Key="/Default/Environment/StructuredLogging/PropertyNamingType/@EntryValue">CamelCase</s:String></wpf:ResourceDictionary>
+
+</wpf:ResourceDictionary>

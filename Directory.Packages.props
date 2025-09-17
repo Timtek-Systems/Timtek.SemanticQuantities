@@ -1,8 +1,10 @@
-﻿<Project>
+<Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="Machine.Specifications" Version="0.3.0" />
+    <PackageVersion Include="Machine.Fakes.FakeItEasy" Version="0.0.3" />
     <PackageVersion Include="Machine.Specifications.Runner.Console" Version="0.9.3" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ public readonly struct Velocity
         Direction = direction;
     }
 
-    public static Velocity From(Quantity<MeterPerSecond> speed, Direction direction) => new Velocity(speed, direction);
+    public static Velocity From(Quantity<MeterPerSecond> speed, Direction direction) => new(speed, direction);
 
     public double Vx => Speed.ValueSI * Direction.X;
     public double Vy => Speed.ValueSI * Direction.Y;

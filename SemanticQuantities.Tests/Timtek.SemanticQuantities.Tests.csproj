@@ -13,6 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AstrometryUnits\Timtek.ObjectOrientedAstronomy.Units.csproj" />
+    <ProjectReference Include="..\SemanticQuantities\Timtek.SemanticQuantities.csproj" />
   </ItemGroup>
 </Project>

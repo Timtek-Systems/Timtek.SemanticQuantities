@@ -1,10 +1,8 @@
-using System;
-
 public sealed class UTC : ITimeScale
 {
     public string Name => "UTC";
 
-    private static readonly DateTime EpochUtc = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+    private static readonly DateTime EpochUtc = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
     public double ToTaiSeconds(double secondsSinceEpochInThisScale, ITimeScaleContext ctx)
     {
