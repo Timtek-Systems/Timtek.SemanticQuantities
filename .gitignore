@@ -1,0 +1,32 @@
+# Visual Studio and .NET build artifacts
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+TestResults/
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDEs and tooling
+_ReSharper*/
+*.DotSettings.user
+.idea/
+*.sln.ide
+
+# Packages and coverage
+packages/
+*.nupkg
+*.snupkg
+*.psess
+*.vsp
+*.vspx
+*.coverage
+*.coveragexml
+
+# Misc
+*.orig

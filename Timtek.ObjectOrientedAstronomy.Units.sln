@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AstrometryUnits", "AstrometryUnits", "{A53CB90B-EB56-9561-4127-BA68884ABB6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timtek.ObjectOrientedAstronomy.Units", "AstrometryUnits\Timtek.ObjectOrientedAstronomy.Units.csproj", "{681EBB4C-DE6B-4334-9441-45107D252AFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AstrometryUnits.Tests", "AstrometryUnits.Tests", "{1FC5963C-7264-8653-7C28-9B13984ADE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timtek.ObjectOrientedAstronomy.Units.Tests", "AstrometryUnits.Tests\Timtek.ObjectOrientedAstronomy.Units.Tests.csproj", "{57A86718-2D2D-4F20-BBFE-3C741A63415B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|x64.Build.0 = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Debug|x86.Build.0 = Debug|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|x64.ActiveCfg = Release|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|x64.Build.0 = Release|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|x86.ActiveCfg = Release|Any CPU
+		{681EBB4C-DE6B-4334-9441-45107D252AFE}.Release|x86.Build.0 = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|x64.Build.0 = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Debug|x86.Build.0 = Debug|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|x64.ActiveCfg = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|x64.Build.0 = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|x86.ActiveCfg = Release|Any CPU
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{681EBB4C-DE6B-4334-9441-45107D252AFE} = {A53CB90B-EB56-9561-4127-BA68884ABB6B}
+		{57A86718-2D2D-4F20-BBFE-3C741A63415B} = {1FC5963C-7264-8653-7C28-9B13984ADE68}
+	EndGlobalSection
+EndGlobal
