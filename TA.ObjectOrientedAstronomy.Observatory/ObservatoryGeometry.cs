@@ -1,11 +1,13 @@
 ﻿using System;
+using Timtek.SemanticQuantities.Quantities;
 using Timtek.SemanticQuantities.Quantities.Domain;
+using Timtek.SemanticQuantities.Units;
 
 namespace TA.ObjectOrientedAstronomy.Observatory
     {
     /// <summary>
     ///     Describes an observatory's optical geometry for the purposes of calculating telescope-dome synchronization.
-    ///     Units of distance are not specified, but all must be in the same units.
+    ///     All distance/offset properties are represented as SI distances in meters via Quantity<Meter>.
     /// </summary>
 public class ObservatoryGeometry
         {
@@ -13,14 +15,14 @@ public class ObservatoryGeometry
         /// Creates a new observatory geometry with all parameters specified.
         /// </summary>
         public ObservatoryGeometry(
-            double mountOffsetEast,
-            double mountOffsetNorth,
-            double mountOffsetUp,
-            double domeRadius,
+            Quantity<Meter> mountOffsetEast,
+            Quantity<Meter> mountOffsetNorth,
+            Quantity<Meter> mountOffsetUp,
+            Quantity<Meter> domeRadius,
             Latitude observatoryLatitude,
-            double polarDeclinationAxisDistance,
-            double polarOpticalAxisDistance,
-            double declinationOpticalAxisDistance)
+            Quantity<Meter> polarDeclinationAxisDistance,
+            Quantity<Meter> polarOpticalAxisDistance,
+            Quantity<Meter> declinationOpticalAxisDistance)
             {
             MountOffsetEast = mountOffsetEast;
             MountOffsetNorth = mountOffsetNorth;
@@ -37,30 +39,28 @@ public class ObservatoryGeometry
         /// A positive value indicates that the mount centre is east of the dome centre.
         /// </summary>
         /// <remarks>Referred to as <c>Xm</c> in [Wallace]</remarks>
-        public double MountOffsetEast { get; internal set; }
+        public Quantity<Meter> MountOffsetEast { get; internal set; }
         /// <summary>
         /// The distance north-south from the dome centre to the mount centre.
         /// A positive value indicates that the mount centre is north of the dome centre.
         /// </summary>
         /// <remarks>Referred to as <c>Ym</c> in [Wallace].</remarks>
-        public double MountOffsetNorth { get; internal set; }
+        public Quantity<Meter> MountOffsetNorth { get; internal set; }
         /// <summary>
         /// The distance up-down from the dome centre to the mount centre.
         /// A positive value indicates that the mount centre is above the dome centre.
         /// </summary>
         /// <remarks>Referred to as <c>Zm</c> in [Wallace].</remarks>
-        public double MountOffsetUp { get; internal set; }
+        public Quantity<Meter> MountOffsetUp { get; internal set; }
 
         /// <summary>
         /// The radius of the dome.
         /// </summary>
         /// <value>
-        /// Units are not specified but must be consistent with
-        /// <see cref="PolarDeclinationAxisDistance"/>, <see cref="DeclinationOpticalAxisDistance"/>
-        /// and <see cref="PolarOpticalAxisDistance"/>.
+        /// SI meters represented as Quantity<Meter>.
         /// </value>
         /// <remarks>Referred to a <c>Rd</c> in [Wallace].</remarks>
-        public double DomeRadius { get; internal set; }
+        public Quantity<Meter> DomeRadius { get; internal set; }
 
         /// <summary>
         /// The geographic latitude of the observatory, which defines the inclination of the north
@@ -75,12 +75,9 @@ public class ObservatoryGeometry
         /// but this is not always so (for example in the case of some horseshoe mounts).
         /// </summary>
         /// <value>
-        /// The value is positive towards the North Celestial Pole when the mount mechanical
-        /// Hour Angle = 0 and Declination = 0. Units are not specified but must be consistent with
-        /// <see cref="DomeRadius"/>, <see cref="PolarOpticalAxisDistance"/>
-        /// and <see cref="DeclinationOpticalAxisDistance"/>
+        /// SI meters represented as Quantity<Meter>.
         /// </value>
-        public double PolarDeclinationAxisDistance { get; internal set; }
+        public Quantity<Meter> PolarDeclinationAxisDistance { get; internal set; }
 
         /// <summary>
         /// The distance along the declination axis from the polar axis to the optical axis.
@@ -90,11 +87,9 @@ public class ObservatoryGeometry
         /// to the point on the declination axis closest to the optical axis.
         /// </summary>
         /// <value>
-        /// Units are not specified but must be consistent with
-        /// <see cref="DomeRadius"/>, <see cref="PolarDeclinationAxisDistance"/>
-        /// and <see cref="DeclinationOpticalAxisDistance"/>
+        /// SI meters represented as Quantity<Meter>.
         /// </value>
-        public double PolarOpticalAxisDistance { get; internal set; }
+        public Quantity<Meter> PolarOpticalAxisDistance { get; internal set; }
 
         /// <summary>
         /// Gets the distance from the declination axis to the optical axis.
@@ -104,12 +99,9 @@ public class ObservatoryGeometry
         /// axis could be mounted off to one side.
         /// </summary>
         /// <value>
-        /// The value is positive towards the North Celestial Pole when the mount mechanical
-        /// Hour Angle = 0 and Declination = 0. Units are not specified but must be consistent with
-        /// <see cref="DomeRadius"/>, <see cref="PolarOpticalAxisDistance"/>
-        /// and <see cref="PolarDeclinationAxisDistance"/>
+        /// SI meters represented as Quantity<Meter>.
         /// </value>
         /// <remarks>This is referred to as <c>r</c> in [Wallace].</remarks>
-        public double DeclinationOpticalAxisDistance { get; internal set; }
+        public Quantity<Meter> DeclinationOpticalAxisDistance { get; internal set; }
         }
     }

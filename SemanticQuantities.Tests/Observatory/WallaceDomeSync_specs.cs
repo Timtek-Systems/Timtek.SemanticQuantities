@@ -14,15 +14,15 @@ class when_computing_dome_position_with_trivial_geometry
 
     Establish context = () =>
     {
-Geo = new ObservatoryGeometry(
-            mountOffsetEast: 0.0,
-            mountOffsetNorth: 0.0,
-            mountOffsetUp: 0.0,
-            domeRadius: 5.0,
+        Geo = new ObservatoryGeometry(
+            mountOffsetEast: Distance.FromMeters(0.0),
+            mountOffsetNorth: Distance.FromMeters(0.0),
+            mountOffsetUp: Distance.FromMeters(0.0),
+            domeRadius: Distance.FromMeters(5.0),
             observatoryLatitude: Latitude.FromDegrees(0.0),
-            polarDeclinationAxisDistance: 0.0,
-            polarOpticalAxisDistance: 0.0,
-            declinationOpticalAxisDistance: 0.0
+            polarDeclinationAxisDistance: Distance.FromMeters(0.0),
+            polarOpticalAxisDistance: Distance.FromMeters(0.0),
+            declinationOpticalAxisDistance: Distance.FromMeters(0.0)
         );
         Sync = new WallaceDomeSync(Geo);
     };

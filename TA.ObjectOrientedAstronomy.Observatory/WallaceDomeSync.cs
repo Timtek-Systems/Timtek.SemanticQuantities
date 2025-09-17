@@ -24,14 +24,14 @@ public DomePosition FromTelescopeMechanicalPosition(HourAngle mechanicalHourAngl
             // Unpack the various inputs so that we have names matching the equations in [Wallace].
             var h = mechanicalHourAngle.InRadians();
             var δ = mechanicalDeclination.InRadians();
-            var p = geometry.PolarDeclinationAxisDistance;
-            var q = geometry.PolarOpticalAxisDistance;
-            var r = geometry.DeclinationOpticalAxisDistance;
+            var p = geometry.PolarDeclinationAxisDistance.ValueSI;
+            var q = geometry.PolarOpticalAxisDistance.ValueSI;
+            var r = geometry.DeclinationOpticalAxisDistance.ValueSI;
             var φ = geometry.ObservatoryLatitude.InRadians();
-            var rD = geometry.DomeRadius;
-            var xm = geometry.MountOffsetEast;
-            var ym = geometry.MountOffsetNorth;
-            var zm = geometry.MountOffsetUp;
+            var rD = geometry.DomeRadius.ValueSI;
+            var xm = geometry.MountOffsetEast.ValueSI;
+            var ym = geometry.MountOffsetNorth.ValueSI;
+            var zm = geometry.MountOffsetUp.ValueSI;
 
             // Numbers in braces () in the comments refer to equations in [Wallace].
             // Calculate vector mount to optical center
