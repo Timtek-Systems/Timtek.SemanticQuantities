@@ -52,6 +52,8 @@ public static class RegistryBootstrapper
         r.Register(new Inch());
         r.Register(new Pound());
         r.Register(new Ounce());
+        r.Register(new PoundForce());
+        r.Register(new Psi());
 
         return r;
     }
