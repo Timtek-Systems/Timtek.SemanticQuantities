@@ -1,0 +1,8 @@
+﻿<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Machine.Specifications.Runner.Console" Version="0.9.3" />
+  </ItemGroup>
+</Project>

@@ -3,11 +3,27 @@ bin/
 obj/
 [Bb]uild/
 [Ll]og/
+[Ll]ogs/
+[Tt]est[Rr]esult*/
 TestResults/
 .vs/
+.bld/
+[Bb]uild[Ll]og.*
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+app.publish/
+
+# Visual C++ database files
+*.VC.db
+*.VC.opendb
 
 # User-specific files
 *.user
+*.rsuser
 *.suo
 *.userosscache
 *.sln.docstates
@@ -16,17 +32,41 @@ TestResults/
 _ReSharper*/
 *.DotSettings.user
 .idea/
+.vscode/
 *.sln.ide
 
-# Packages and coverage
+# NuGet packages (PackageReference is preferred)
 packages/
-*.nupkg
-*.snupkg
+# Uncomment the next line if you use packages.config
+# packages/*
+# except build/ to allow project files to be included
+# !packages/build/
+
+# Test and code coverage
 *.psess
 *.vsp
 *.vspx
 *.coverage
 *.coveragexml
 
+# NCrunch
+*.ncrunchsolution
+*.ncrunchproject
+_NCrunch_*/
+.*ncrunch*/
+NCrunchTemp_*
+
+# SonarQube
+.sonarqube/
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+*.dbmdl
+
 # Misc
 *.orig
+.DS_Store
+Thumbs.db
+/.NCrunch_Timtek.ObjectOrientedAstronomy.Units

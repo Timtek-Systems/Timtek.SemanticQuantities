@@ -1,15 +1,18 @@
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Machine.Specifications;
 
-[TestClass]
-public class AngleTests
+[Subject("Angle conversion")]
+public class when_converting_degrees_to_radians
 {
-    [TestMethod]
-    public void ConvertDegreesToRadians()
+    static double result;
+
+    Because of = () =>
+        result = Angle.FromDegrees(180).As<Radian>();
+
+    It should_be_pi = () =>
     {
-        var angleDeg = Angle.FromDegrees(180);
-        var radians = angleDeg.As<Radian>();
-        Assert.AreEqual(Math.PI, radians, 1e-6);
-    }
+        if (Math.Abs(result - Math.PI) > 1e-6)
+            throw new Exception($"Expected PI within 1e-6, but was {result}");
+    };
 }

@@ -1,13 +1,18 @@
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using Machine.Specifications;
 
-[TestClass]
-public class VelocityTests
+[Subject("Speed conversion")]
+public class when_converting_kmh_to_mps
 {
-    [TestMethod]
-    public void ConvertKmhToMps()
+    static double value;
+
+    Because of = () =>
+        value = Speed.FromKilometersPerHour(36).ValueSI;
+
+    It should_be_10_mps = () =>
     {
-        var velocity = Velocity.FromKilometersPerHour(36);
-        Assert.AreEqual(10.0, velocity.ValueSI, 1e-6);
-    }
+        if (Math.Abs(value - 10.0) > 1e-6)
+            throw new Exception($"Expected 10 m/s within 1e-6, but was {value}");
+    };
 }

@@ -11,6 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AstrometryUnits.Tests", "As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timtek.ObjectOrientedAstronomy.Units.Tests", "AstrometryUnits.Tests\Timtek.ObjectOrientedAstronomy.Units.Tests.csproj", "{57A86718-2D2D-4F20-BBFE-3C741A63415B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Shared", "Solution Shared", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Packages.props = Directory.Packages.props
+		GitVersion.yaml = GitVersion.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,5 +59,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{681EBB4C-DE6B-4334-9441-45107D252AFE} = {A53CB90B-EB56-9561-4127-BA68884ABB6B}
 		{57A86718-2D2D-4F20-BBFE-3C741A63415B} = {1FC5963C-7264-8653-7C28-9B13984ADE68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14CABE32-4078-46EC-8698-1F2C0D108FFB}
 	EndGlobalSection
 EndGlobal

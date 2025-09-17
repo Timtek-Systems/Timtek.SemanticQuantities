@@ -1,0 +1,60 @@
+mode: ContinuousDelivery
+semantic-version-format: SemVer2
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+commit-message-incrementing: Enabled
+tag-prefix: 'v'
+continuous-delivery-fallback-tag: ci
+
+branches:
+  master:
+    regex: ^master$|^main$
+    tag: ''
+    increment: patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+  develop:
+    regex: ^develop$
+    tag: alpha
+    increment: minor
+    track-merge-target: false
+  feature:
+    regex: ^features?[/-]
+    tag: useBranchName
+    increment: Inherit
+    source-branches:
+      - develop
+      - feature
+  release:
+    regex: ^releases?[/-]
+    tag: rc
+    increment: patch
+    source-branches:
+      - develop
+  hotfix:
+    regex: ^hotfix(es)?[/-]
+    tag: ''
+    increment: patch
+    source-branches:
+      - master
+      - support
+  support:
+    regex: ^support[/-]
+    tag: ''
+    increment: patch
+    source-branches:
+      - master
+  pull-request:
+    regex: ^(pull|pr)[/-]
+    tag: PullRequest
+    increment: Inherit
+    source-branches:
+      - develop
+      - master
+      - feature
+      - release
+      - hotfix
+      - support
+
+ignore:
+  sha: []
