@@ -33,7 +33,7 @@ public class when_using_wallace_section5_example_east_of_pier
 
     It azimuth_matches_wallace = () =>
     {
-        var az = Result.Azimuth.As<Degree>();
+var az = Result.Azimuth.As(new Degree());
         // Expected 50.369411°
         if (System.Math.Abs(az - 50.369411) > 1e-6)
             throw new System.Exception($"Az mismatch: expected 50.369411°, got {az}");
@@ -41,7 +41,7 @@ public class when_using_wallace_section5_example_east_of_pier
 
     It elevation_matches_wallace = () =>
     {
-        var el = Result.Elevation.As<Degree>();
+var el = Result.Elevation.As(new Degree());
         // Expected 72.051742°
         if (System.Math.Abs(el - 72.051742) > 1e-6)
             throw new System.Exception($"El mismatch: expected 72.051742°, got {el}");
@@ -75,7 +75,7 @@ public class when_using_wallace_section5_example_west_of_pier
 
     It azimuth_matches_wallace = () =>
     {
-        var az = Result.Azimuth.As<Degree>();
+var az = Result.Azimuth.As(new Degree());
         // Expected 305.595067°
         if (System.Math.Abs(az - 305.595067) > 1e-6)
             throw new System.Exception($"Az mismatch: expected 305.595067°, got {az}");
@@ -83,7 +83,7 @@ public class when_using_wallace_section5_example_west_of_pier
 
     It elevation_matches_wallace = () =>
     {
-        var el = Result.Elevation.As<Degree>();
+var el = Result.Elevation.As(new Degree());
         // Expected 68.824495°
         if (System.Math.Abs(el - 68.824495) > 1e-6)
             throw new System.Exception($"El mismatch: expected 68.824495°, got {el}");

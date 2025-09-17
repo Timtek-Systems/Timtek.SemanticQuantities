@@ -15,14 +15,14 @@ public class ObservatoryGeometry
         /// Creates a new observatory geometry with all parameters specified.
         /// </summary>
         public ObservatoryGeometry(
-            Quantity<Meter> mountOffsetEast,
-            Quantity<Meter> mountOffsetNorth,
-            Quantity<Meter> mountOffsetUp,
-            Quantity<Meter> domeRadius,
+            Quantity mountOffsetEast,
+            Quantity mountOffsetNorth,
+            Quantity mountOffsetUp,
+            Quantity domeRadius,
             Latitude observatoryLatitude,
-            Quantity<Meter> polarDeclinationAxisDistance,
-            Quantity<Meter> polarOpticalAxisDistance,
-            Quantity<Meter> declinationOpticalAxisDistance)
+            Quantity polarDeclinationAxisDistance,
+            Quantity polarOpticalAxisDistance,
+            Quantity declinationOpticalAxisDistance)
             {
             MountOffsetEast = mountOffsetEast;
             MountOffsetNorth = mountOffsetNorth;
@@ -38,29 +38,29 @@ public class ObservatoryGeometry
         /// The distance east-west from the dome centre to the mount centre.
         /// A positive value indicates that the mount centre is east of the dome centre.
         /// </summary>
-        /// <remarks>Referred to as <c>Xm</c> in [Wallace]</remarks>
-        public Quantity<Meter> MountOffsetEast { get; internal set; }
+/// <remarks>Referred to as <c>Xm</c> in [Wallace]</remarks>
+        public Quantity MountOffsetEast { get; internal set; }
         /// <summary>
         /// The distance north-south from the dome centre to the mount centre.
         /// A positive value indicates that the mount centre is north of the dome centre.
         /// </summary>
-        /// <remarks>Referred to as <c>Ym</c> in [Wallace].</remarks>
-        public Quantity<Meter> MountOffsetNorth { get; internal set; }
+/// <remarks>Referred to as <c>Ym</c> in [Wallace].</remarks>
+        public Quantity MountOffsetNorth { get; internal set; }
         /// <summary>
         /// The distance up-down from the dome centre to the mount centre.
         /// A positive value indicates that the mount centre is above the dome centre.
         /// </summary>
-        /// <remarks>Referred to as <c>Zm</c> in [Wallace].</remarks>
-        public Quantity<Meter> MountOffsetUp { get; internal set; }
+/// <remarks>Referred to as <c>Zm</c> in [Wallace].</remarks>
+        public Quantity MountOffsetUp { get; internal set; }
 
         /// <summary>
         /// The radius of the dome.
         /// </summary>
         /// <value>
-        /// SI meters represented as Quantity<Meter>.
+/// SI meters represented as runtime Quantity.
         /// </value>
         /// <remarks>Referred to a <c>Rd</c> in [Wallace].</remarks>
-        public Quantity<Meter> DomeRadius { get; internal set; }
+        public Quantity DomeRadius { get; internal set; }
 
         /// <summary>
         /// The geographic latitude of the observatory, which defines the inclination of the north
@@ -75,9 +75,9 @@ public class ObservatoryGeometry
         /// but this is not always so (for example in the case of some horseshoe mounts).
         /// </summary>
         /// <value>
-        /// SI meters represented as Quantity<Meter>.
+/// SI meters represented as runtime Quantity.
         /// </value>
-        public Quantity<Meter> PolarDeclinationAxisDistance { get; internal set; }
+        public Quantity PolarDeclinationAxisDistance { get; internal set; }
 
         /// <summary>
         /// The distance along the declination axis from the polar axis to the optical axis.
@@ -87,9 +87,9 @@ public class ObservatoryGeometry
         /// to the point on the declination axis closest to the optical axis.
         /// </summary>
         /// <value>
-        /// SI meters represented as Quantity<Meter>.
+/// SI meters represented as runtime Quantity.
         /// </value>
-        public Quantity<Meter> PolarOpticalAxisDistance { get; internal set; }
+        public Quantity PolarOpticalAxisDistance { get; internal set; }
 
         /// <summary>
         /// Gets the distance from the declination axis to the optical axis.
@@ -99,9 +99,9 @@ public class ObservatoryGeometry
         /// axis could be mounted off to one side.
         /// </summary>
         /// <value>
-        /// SI meters represented as Quantity<Meter>.
+/// SI meters represented as runtime Quantity.
         /// </value>
         /// <remarks>This is referred to as <c>r</c> in [Wallace].</remarks>
-        public Quantity<Meter> DeclinationOpticalAxisDistance { get; internal set; }
+        public Quantity DeclinationOpticalAxisDistance { get; internal set; }
         }
     }

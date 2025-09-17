@@ -10,7 +10,7 @@ public class when_converting_degrees_to_radians
     private static double result;
 
     private Because of = () =>
-        result = Angle.FromDegrees(180).As<Radian>();
+result = Angle.FromDegrees(180).As(new Radian());
 
     private It should_be_pi = () =>
     {

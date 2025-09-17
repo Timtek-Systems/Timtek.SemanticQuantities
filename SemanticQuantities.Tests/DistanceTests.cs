@@ -8,7 +8,7 @@ namespace Timtek.SemanticQuantities.Tests;
 [Subject("Distance - SI meters construction")]
 public class when_constructing_distance_from_meters
 {
-    private static Quantity<Meter> distance;
+private static Quantity distance;
 
     private Because of = () =>
         distance = Distance.FromMeters(12.0);
@@ -21,7 +21,7 @@ public class when_constructing_distance_from_meters
 
     private It as_meter_should_equal_input = () =>
     {
-        var m = distance.As<Meter>();
+var m = distance.As(new Meter());
         if (Math.Abs(m - 12.0) > 1e-12)
             throw new Exception($"Expected 12.0 m within 1e-12, but was {m}");
     };
@@ -30,7 +30,7 @@ public class when_constructing_distance_from_meters
 [Subject("Distance - kilometer construction")]
 public class when_constructing_distance_from_kilometers
 {
-    private static Quantity<Meter> distance;
+private static Quantity distance;
 
     private Because of = () =>
         distance = Distance.FromKilometers(2.5);
@@ -43,7 +43,7 @@ public class when_constructing_distance_from_kilometers
 
     private It as_kilometers_should_be_2_point_5 = () =>
     {
-        var km = distance.As<Kilometer>();
+var km = distance.As(new Kilometer());
         if (Math.Abs(km - 2.5) > 1e-12)
             throw new Exception($"Expected 2.5 km within 1e-12, but was {km}");
     };
@@ -55,11 +55,11 @@ public class when_converting_between_meters_and_kilometers
     private It meters_to_kilometers_round_trip = () =>
     {
         var dist = Distance.FromMeters(1500.0);
-        var km = dist.As<Kilometer>();
+var km = dist.As(new Kilometer());
         if (Math.Abs(km - 1.5) > 1e-12)
             throw new Exception($"Expected 1.5 km within 1e-12, but was {km}");
 
-        var backToMeters = new Quantity<Kilometer>(km).As<Meter>();
+var backToMeters = new Quantity(km, new Kilometer()).As(new Meter());
         if (Math.Abs(backToMeters - 1500.0) > 1e-12)
             throw new Exception($"Expected 1500.0 m within 1e-12, but was {backToMeters}");
     };
@@ -68,10 +68,10 @@ public class when_converting_between_meters_and_kilometers
 [Subject("Distance - direct kilometer quantity behavior")]
 public class when_constructing_quantity_of_kilometer_directly
 {
-    private static Quantity<Kilometer> qkm;
+private static Quantity qkm;
 
     private Because of = () =>
-        qkm = new Quantity<Kilometer>(2.0);
+qkm = new Quantity(2.0, new Kilometer());
 
     private It value_si_should_be_2000_meters = () =>
     {

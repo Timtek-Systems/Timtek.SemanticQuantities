@@ -1,4 +1,4 @@
-using Timtek.SemanticQuantities.Units;
+using Timtek.SemanticQuantities.Dimensions;
 
 namespace Timtek.SemanticQuantities.Units;
 
@@ -8,19 +8,12 @@ namespace Timtek.SemanticQuantities.Units;
 /// <remarks>
 /// Meter is the SI unit for distance/length, so conversions to and from SI are identity operations.
 /// </remarks>
-public class Meter : IUnit
+public sealed class Meter : IUnit
 {
-    /// <summary>
-    /// Converts a value in meters to the SI value.
-    /// </summary>
-    /// <param name="value">The value in meters.</param>
-    /// <returns>The value expressed in SI units (meters).</returns>
-    public double ToSI(double value) => value;
+    public string             Name     => "Meter";
+    public string             Symbol   => "m";
+    public DimensionSignature Signature => DimensionSignature.Length;
 
-    /// <summary>
-    /// Converts a value from SI (meters) to meters.
-    /// </summary>
-    /// <param name="siValue">The value in SI units (meters).</param>
-    /// <returns>The value in meters.</returns>
+    public double ToSI(double value) => value;
     public double FromSI(double siValue) => siValue;
 }

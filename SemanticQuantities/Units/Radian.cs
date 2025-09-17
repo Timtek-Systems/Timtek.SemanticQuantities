@@ -1,7 +1,13 @@
+using Timtek.SemanticQuantities.Dimensions;
+
 namespace Timtek.SemanticQuantities.Units;
 
-public class Radian : IUnit
+public sealed class Radian : IUnit
 {
-    public double ToSI(double   value) => value;
+    public string             Name      => "Radian";
+    public string             Symbol    => "rad";
+    public DimensionSignature Signature => DimensionSignature.Angular;
+
+    public double ToSI(double value) => value;
     public double FromSI(double siValue) => siValue;
 }

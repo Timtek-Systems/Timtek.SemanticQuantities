@@ -11,12 +11,12 @@ internal class when_converting_hour_angle_to_degrees_and_radians
 {
     private It twelve_hours_should_be_180_degrees = () =>
     {
-        var deg = new Quantity<HourOfAngle>(12.0).As<Degree>();
+var deg = new Quantity(12.0, new HourOfAngle()).As(new Degree());
         Math.Abs(deg - 180.0).ShouldBeLessThan(1e-12);
     };
 
     private It twelve_hours_should_be_pi_radians = () =>
-        Math.Abs(new Quantity<HourOfAngle>(12.0).ValueSI - Math.PI).ShouldBeLessThan(1e-12);
+Math.Abs(new Quantity(12.0, new HourOfAngle()).ValueSI - Math.PI).ShouldBeLessThan(1e-12);
 }
 
 [Subject("Right Ascension normalization")]

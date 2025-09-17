@@ -11,13 +11,13 @@ public static class Distance
     /// Creates a distance from meters (SI). The internal representation is SI, so this is an identity construction.
     /// </summary>
     /// <param name="meters">Distance in meters.</param>
-    /// <returns>A quantity of type <see cref="Meter"/> with the specified value in meters.</returns>
-    public static Quantity<Meter> FromMeters(double meters) => new(meters, true);
+    /// <returns>A runtime quantity in meters.</returns>
+    public static Quantity FromMeters(double meters) => new(meters, new Meter());
 
     /// <summary>
     /// Creates a distance from kilometers.
     /// </summary>
     /// <param name="kilometers">Distance in kilometers.</param>
-    /// <returns>A quantity of type <see cref="Meter"/> converted from kilometers.</returns>
-    public static Quantity<Meter> FromKilometers(double kilometers) => new(kilometers * 1000.0);
+    /// <returns>A runtime quantity in meters converted from kilometers.</returns>
+    public static Quantity FromKilometers(double kilometers) => new(kilometers, new Kilometer());
 }

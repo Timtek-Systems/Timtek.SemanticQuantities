@@ -22,11 +22,11 @@ namespace TA.ObjectOrientedAstronomy.Observatory
         {
 public DomePosition(double azimuthDegrees, double elevationDegrees)
             {
-            Azimuth = new Quantity<Degree>(azimuthDegrees);
-            Elevation = new Quantity<Degree>(elevationDegrees);
+            Azimuth = new Quantity(azimuthDegrees, new Degree());
+            Elevation = new Quantity(elevationDegrees, new Degree());
             }
-        public Quantity<Degree> Azimuth { get; }
-        public Quantity<Degree> Elevation { get; }
+        public Quantity Azimuth { get; }
+        public Quantity Elevation { get; }
 
         public static DomePosition FromRadians(double azimuth, double elevation)
             {
@@ -38,7 +38,7 @@ public DomePosition(double azimuthDegrees, double elevationDegrees)
         /// <inheritdoc />
         public override string ToString()
             {
-return $"{nameof(Azimuth)}: {Azimuth.As<Degree>()} deg, {nameof(Elevation)}: {Elevation.As<Degree>()} deg";
+return $"{nameof(Azimuth)}: {Azimuth.As(new Degree())} deg, {nameof(Elevation)}: {Elevation.As(new Degree())} deg";
             }
         }
     }

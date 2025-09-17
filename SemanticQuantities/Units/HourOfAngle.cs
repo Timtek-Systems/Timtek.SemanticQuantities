@@ -1,3 +1,5 @@
+using Timtek.SemanticQuantities.Dimensions;
+
 namespace Timtek.SemanticQuantities.Units;
 
 /// <summary>
@@ -10,17 +12,10 @@ namespace Timtek.SemanticQuantities.Units;
 /// </remarks>
 public sealed class HourOfAngle : IUnit
 {
-    /// <summary>
-    ///     Converts an angle value from hours-of-angle to SI radians.
-    /// </summary>
-    /// <param name="value">Angle in hours-of-angle.</param>
-    /// <returns>Angle in radians.</returns>
-    public double ToSI(double value) => value * (Math.PI / 12.0); // hours-of-angle -> radians
+    public string             Name      => "Hour of Angle";
+    public string             Symbol    => "h_angle";
+    public DimensionSignature Signature => DimensionSignature.Angular;
 
-    /// <summary>
-    ///     Converts an angle value from SI radians to hours-of-angle.
-    /// </summary>
-    /// <param name="siValue">Angle in radians.</param>
-    /// <returns>Angle in hours-of-angle.</returns>
+    public double ToSI(double value) => value * (Math.PI / 12.0); // hours-of-angle -> radians
     public double FromSI(double siValue) => siValue * (12.0 / Math.PI); // radians -> hours-of-angle
 }

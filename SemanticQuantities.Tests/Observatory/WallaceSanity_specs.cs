@@ -69,8 +69,8 @@ public class when_scaling_all_distances
     };
 
     It azimuth_is_invariant = () =>
-        System.Math.Abs(resultMeters.Azimuth.As<Degree>() - resultScaled.Azimuth.As<Degree>()).ShouldBeLessThan(1e-9);
+System.Math.Abs(resultMeters.Azimuth.As(new Degree()) - resultScaled.Azimuth.As(new Degree())).ShouldBeLessThan(1e-9);
 
     It elevation_is_invariant = () =>
-        System.Math.Abs(resultMeters.Elevation.As<Degree>() - resultScaled.Elevation.As<Degree>()).ShouldBeLessThan(1e-9);
+System.Math.Abs(resultMeters.Elevation.As(new Degree()) - resultScaled.Elevation.As(new Degree())).ShouldBeLessThan(1e-9);
 }

@@ -30,8 +30,8 @@ class when_computing_dome_position_with_trivial_geometry
     It returns_zenith_for_HA0_Dec0 = () =>
     {
         var dome = Sync.FromTelescopeMechanicalPosition(HourAngle.FromHours(0.0), Declination.FromDegrees(0.0));
-        var az = dome.Azimuth.As<Degree>();
-        var el = dome.Elevation.As<Degree>();
+var az = dome.Azimuth.As(new Degree());
+        var el = dome.Elevation.As(new Degree());
         Math.Abs(az - 0.0).ShouldBeLessThan(1e-12);
         Math.Abs(el - 90.0).ShouldBeLessThan(1e-12);
     };

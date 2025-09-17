@@ -4,9 +4,9 @@ namespace Timtek.SemanticQuantities.Quantities.Domain;
 
 public static class Duration
 {
-    public static Quantity<Second> FromSeconds(double    seconds) => new(seconds, true);
-    public static Quantity<Second> FromMinutes(double    minutes) => new(minutes * 60.0);
-    public static Quantity<Second> FromHours(double      hours) => new(hours * 3600.0);
-    public static Quantity<Second> FromDays(double       days) => new(days * 86400.0);
-    public static Quantity<Second> FromJulianDays(double julianDays) => new(julianDays * 86400.0);
+    public static Quantity FromSeconds(double    seconds) => new(seconds, new Second());
+    public static Quantity FromMinutes(double    minutes) => new(minutes, new Minute());
+    public static Quantity FromHours(double      hours) => new(hours, new Hour());
+    public static Quantity FromDays(double       days) => new(days, new Day());
+    public static Quantity FromJulianDays(double julianDays) => new(julianDays, new JulianDay());
 }

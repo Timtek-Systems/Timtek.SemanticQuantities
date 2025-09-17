@@ -4,6 +4,6 @@ namespace Timtek.SemanticQuantities.Quantities.Domain;
 
 public static class Angle
 {
-    public static Quantity<Degree> FromDegrees(double degrees) => new(degrees);
-    public static Quantity<Radian> FromRadians(double radians) => new(radians, true);
+    public static Quantity FromDegrees(double degrees) => new(degrees, new Degree());
+    public static Quantity FromRadians(double radians) => new(radians, new Radian());
 }

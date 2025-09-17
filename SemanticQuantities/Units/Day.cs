@@ -1,7 +1,13 @@
+using Timtek.SemanticQuantities.Dimensions;
+
 namespace Timtek.SemanticQuantities.Units;
 
-public class Day : IUnit
+public sealed class Day : IUnit
 {
-    public double ToSI(double   value) => value * 86400.0;
+    public string             Name      => "Day";
+    public string             Symbol    => "d";
+    public DimensionSignature Signature => DimensionSignature.Time;
+
+    public double ToSI(double value) => value * 86400.0;
     public double FromSI(double siValue) => siValue / 86400.0;
 }
